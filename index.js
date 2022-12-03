@@ -17,6 +17,7 @@ The function should:
 
 
 function createMenuItem(name, price, category){
+  //return {name: name, price: price, category: category};  //this is the same as below
   return {name, price, category};
 }
 
@@ -164,6 +165,7 @@ Use the getReviewsByRating function below to do the following:
 */
 
  function getReviewByRating(arr, rating) {
+  //filter through the array and return the reviews that match the rating parameter
   return arr.filter((review) => review.rating >= rating && review.rating < rating + 1);
   }
 
@@ -183,6 +185,8 @@ Use the getLongReviews function below to do the following:
 */
 
 function getLongReviews(arr) {
+  //filter through the array and return the reviews that have more than 15 words in their feedback
+  //split the feedback into an array of words
   return arr.filter((review) => review.feedback.split(" ").length > 15);
   }
 
@@ -208,8 +212,12 @@ Use the carMaker function below to do the following:
 
 function carMaker(miles) {
   return {
+    //create the object with the odometer value
+    //create the drive method
     odometer: miles,
+    //drive method takes a distance value as its parameter
     drive: function(distance) {
+      //drive method should also cause the odometer value in the object to be increased by the distance
       this.odometer += distance;
       return this.odometer;
     }
